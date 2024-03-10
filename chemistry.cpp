@@ -8,17 +8,27 @@ cin>>t;
 
 while(t--)
 {
-int n;
-cin>>n;
-vector<int>arr;
+int n,k;
+cin>>n>>k;
 
-for(int i=0;i<n;i++ )
-{int num;
-cin>>num;
-arr.push_back(num);
+string s;
+cin>>s;
+
+map<char,int>mp;
+for(int i=0;i<n;i++)
+{
+mp[s[i]]++;
+}
+
+int cnt=0;
+for(auto it:mp)
+{
+if(it.second%2==1)cnt++;
 }
 
 
+if(cnt>k+1)cout<<"NO"<<endl;
+else cout<<"YES"<<endl;
 
 }
 
